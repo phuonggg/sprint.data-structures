@@ -35,18 +35,9 @@ class LinkedList {
       if (currentNode.value === value) {
         return currentNode;
       }
-
       currentNode = currentNode.next;
     }
     return null;
-    // if (this.head.value === value) {
-    //   return this.head;
-    // } else if (this.head.next === null) {
-    //   return null;
-    // } else {
-    //   value =
-    //   this.findNode(this.head.next)
-    // }
   }
 
   /*

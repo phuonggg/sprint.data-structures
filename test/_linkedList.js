@@ -6,7 +6,7 @@ const LinkedList = require("../src/LinkedList");
 
 let linkedList;
 
-describe.only("Linked Lists", () => {
+describe("Linked Lists", () => {
   beforeEach(() => {
     linkedList = new LinkedList(5);
   });

@@ -2,10 +2,10 @@
 
 const { expect } = require("chai");
 const { isClass } = require("./utilities");
-const Tree = require("../src/Tree");
-
+const { Tree } = require("../src/Tree"); // needs to be brackets
 let tree;
-describe("Trees", () => {
+
+describe.only("Trees", () => {
   beforeEach(() => {
     tree = new Tree(1);
   });
@@ -63,15 +63,29 @@ describe("Trees", () => {
     });
   });
 
+  describe("The remove method", () => {
+    it("should exist on the Tree prototype", () => {
+      expect(Tree.prototype.remove).to.exist;
+    });
+
+    it("should successfully remove value from tree ", () => {
+      tree.addChild(2);
+      tree.remove(2);
+      expect(tree.contains(2)).to.equal(false);
+    });
+
+    it("should return undefined if a value does not exist", () => {
+      expect(tree.remove(2)).to.equal(undefined);
+    });
+  });
+
   /*
 +-------------------------+
 | Advanced Requirements!! |
 +-------------------------+
-
 The following are part of the advanced requirements.
 Do not proceed until you are done with the basic
 requirements for ALL data structures in this exercise.
-
 Uncomment by removing the 'x'.
 */
 
@@ -92,7 +106,7 @@ Uncomment by removing the 'x'.
 
     it("should take a function as the parameter", () => {
       const x = (node) => node;
-      tree.traverseDepthFirst(x);
+      tree.traverseBreadthFirst(x);
       expect(x).to.be.a("function");
     });
   });
@@ -108,7 +122,7 @@ Uncomment by removing the 'x'.
       tree.children[0].addChild(4);
       tree.children[1].addChild(5);
       const breadthFirstResult = [];
-      tree.traverseBreadthFirst((node) => breadthFirstResult.push(node.value));
+      tree.traverseBreadthFirst((node) => breadthFirstResult.push(node));
       expect(breadthFirstResult).to.eql([1, 2, 3, 4, 5]);
     });
 

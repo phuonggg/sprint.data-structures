@@ -4,9 +4,20 @@ class Tree {
     this.children = [];
   }
 
-  addChild(value) {}
+  addChild(value) {
+    const newChild = new Tree(value);
+    this.children.push(newChild);
+    return this.children[this.children.length - 1];
+  }
 
-  contains(value) {}
+  contains(value) {
+    if (this.value === value || this.children.includes(value)) {
+      return true;
+    }
+    return false;
+  }
+
+  remove(value) {}
 
   /*
 +-------------------------+
@@ -31,3 +42,4 @@ requirements for ALL data structures in this exercise.
 |X                               X
 |XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 */
+module.exports = { Tree }; //needed to export

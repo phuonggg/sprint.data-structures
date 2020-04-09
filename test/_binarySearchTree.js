@@ -212,7 +212,7 @@ Uncomment by removing the 'x'.
     });
   });
 
-  describe("The checkIfBalanced method", () => {
+  xdescribe("The checkIfBalanced method", () => {
     it("should exist on the Tree prototype", () => {
       expect(BinarySearchTree.prototype.checkIfBalanced).to.exist;
     });
