@@ -11,11 +11,43 @@ class LinkedList {
     }
   }
 
-  appendToTail(value) {}
+  appendToTail(value) {
+    const newNode = new Node(value);
+    if (this.head === undefined) {
+      this.head = newNode;
+      this.tail = this.head;
+    } else {
+      this.tail.next = newNode;
+      this.tail = newNode;
+    }
+    return this.tail;
+  }
 
-  removeHead() {}
+  removeHead() {
+    const removedHead = this.head;
+    this.head = this.head.next;
+    return removedHead;
+  }
 
-  findNode(value) {}
+  findNode(value) {
+    let currentNode = this.head;
+    while (currentNode) {
+      if (currentNode.value === value) {
+        return currentNode;
+      }
+
+      currentNode = currentNode.next;
+    }
+    return null;
+    // if (this.head.value === value) {
+    //   return this.head;
+    // } else if (this.head.next === null) {
+    //   return null;
+    // } else {
+    //   value =
+    //   this.findNode(this.head.next)
+    // }
+  }
 
   /*
 +-------------------------+

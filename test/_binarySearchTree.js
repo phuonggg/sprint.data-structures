@@ -32,19 +32,19 @@ describe("The Binary Search Tree", () => {
     fullBST.insert(13);
   });
 
-  describe("The Binary Search Tree constructor", () => {
+  xdescribe("The Binary Search Tree constructor", () => {
     it("should be an ES6 class", () => {
       expect(isClass(BinarySearchTree)).to.be.true;
     });
   });
 
-  describe("The insert method", () => {
+  xdescribe("The insert method", () => {
     it("should exist on the Tree prototype", () => {
       expect(BinarySearchTree.prototype.insert).to.exist;
       expect(typeof BinarySearchTree.prototype.insert).to.equal("function");
     });
 
-    it.only("should insert the given value", () => {
+    it("should insert the given value", () => {
       tree.insert(2);
       expect(tree.value).to.equal(1);
       expect(tree.right.value).to.equal(2);
@@ -79,7 +79,7 @@ describe("The Binary Search Tree", () => {
     });
   });
 
-  describe("The contains method", () => {
+  xdescribe("The contains method", () => {
     it("should exist on the Tree prototype", () => {
       expect(BinarySearchTree.prototype.contains).to.exist;
       expect(typeof BinarySearchTree.prototype.contains).to.equal("function");
@@ -102,7 +102,7 @@ describe("The Binary Search Tree", () => {
     });
   });
 
-  describe("The traverseDepthFirstInOrder method", () => {
+  xdescribe("The traverseDepthFirstInOrder method", () => {
     it("should exist on the Tree prototype", () => {
       expect(BinarySearchTree.prototype.traverseDepthFirstInOrder).to.exist;
     });
@@ -132,7 +132,7 @@ requirements for ALL data structures in this exercise.
 Uncomment by removing the 'x'.
 */
 
-  describe("The traverseBreadthFirst method", () => {
+  xdescribe("The traverseBreadthFirst method", () => {
     it("should exist on the Tree prototype", () => {
       expect(BinarySearchTree.prototype.traverseBreadthFirst).to.exist;
       expect(typeof BinarySearchTree.prototype.traverseBreadthFirst).to.equal(
@@ -160,7 +160,7 @@ Uncomment by removing the 'x'.
     });
   });
 
-  describe("The traverseDepthFirstPreOrder method", () => {
+  xdescribe("The traverseDepthFirstPreOrder method", () => {
     it("should exist on the Tree prototype", () => {
       expect(BinarySearchTree.prototype.traverseDepthFirstPreOrder).to.exist;
     });
@@ -178,7 +178,7 @@ Uncomment by removing the 'x'.
     });
   });
 
-  describe("The traverseDepthFirstPostOrder method", () => {
+  xdescribe("The traverseDepthFirstPostOrder method", () => {
     it("should exist on the Tree prototype", () => {
       expect(BinarySearchTree.prototype.traverseDepthFirstPostOrder).to.exist;
     });
@@ -198,7 +198,7 @@ Uncomment by removing the 'x'.
     });
   });
 
-  describe("The checkIfFull method", () => {
+  xdescribe("The checkIfFull method", () => {
     it("should exist on the Tree prototype", () => {
       expect(BinarySearchTree.prototype.checkIfFull).to.exist;
     });
