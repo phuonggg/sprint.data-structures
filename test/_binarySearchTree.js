@@ -2,13 +2,14 @@
 // Hello Student! Can you guess the reason why we are specifically disabling the no-unused-expressions rules here?
 
 const { expect } = require("chai");
-const { BinarySearchTree } = require("../src/BinarySearchTree");
+const BinarySearchTree = require("../src/BinarySearchTree");
 const { isClass } = require("./utilities");
 
 let tree;
 let anotherTree;
 let fullBST;
-describe("The Binary Search Tree", () => {
+
+describe.only("The Binary Search Tree", () => {
   beforeEach(() => {
     tree = new BinarySearchTree(1);
 
@@ -198,7 +199,7 @@ Uncomment by removing the 'x'.
     });
   });
 
-  xdescribe("The checkIfFull method", () => {
+  describe("The checkIfFull method", () => {
     it("should exist on the Tree prototype", () => {
       expect(BinarySearchTree.prototype.checkIfFull).to.exist;
     });

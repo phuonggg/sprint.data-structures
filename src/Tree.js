@@ -68,14 +68,6 @@ requirements for ALL data structures in this exercise.
   traverseBreadthFirst(fn) {}
 }
 
-const tree = new Tree(3);
-tree.addChild(4);
-tree.addChild(5);
-console.log("tree:", tree);
-console.log(tree.contains(4));
-tree.remove(4);
-console.log("tree:", tree);
-
 /*
 |XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 |X                               X
