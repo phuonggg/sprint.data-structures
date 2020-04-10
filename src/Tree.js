@@ -1,7 +1,7 @@
 class Tree {
   constructor(value) {
     this.value = value;
-    this.children = [];
+    this.children = []; //only intermediate children
   }
 
   addChild(value) {
@@ -11,13 +11,47 @@ class Tree {
   }
 
   contains(value) {
-    if (this.value === value || this.children.includes(value)) {
-      return true;
-    }
-    return false;
+    let result = false;
+    const searchInChildren = function(element) {
+      //base case
+      if (element.value === value) {
+        result = true;
+        return result;
+      } else if (element.children) {
+        element.children.forEach((item) => {
+          searchInChildren(item);
+        });
+      }
+    };
+    searchInChildren(this);
+    return result;
   }
 
-  remove(value) {}
+  remove(value) {
+    let deletedNode = undefined;
+
+    if (this.contains(value) === false) {
+      return deletedNode;
+    }
+
+    const searchInChildren = function(element) {
+      //check root
+      if (element.value === value) {
+        deletedNode = value;
+        if (element.children) {
+          // check if element to delete has a child
+          element.value = undefined;
+          element.children = [];
+        }
+      } else if (element.children) {
+        element.children.forEach((item) => {
+          searchInChildren(item);
+        });
+      }
+    };
+    searchInChildren(this);
+    return deletedNode;
+  }
 
   /*
 +-------------------------+
@@ -33,6 +67,14 @@ requirements for ALL data structures in this exercise.
 
   traverseBreadthFirst(fn) {}
 }
+
+const tree = new Tree(3);
+tree.addChild(4);
+tree.addChild(5);
+console.log("tree:", tree);
+console.log(tree.contains(4));
+tree.remove(4);
+console.log("tree:", tree);
 
 /*
 |XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX

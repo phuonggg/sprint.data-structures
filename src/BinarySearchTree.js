@@ -1,4 +1,18 @@
-class BinarySearchTree {}
+class BSTNode {
+  constructor(value, leftChild) {
+    this.value = value;
+    this.leftChild = null;
+    this.rightCHild = null;
+  }
+}
+
+class BinarySearchTree {
+  constructor() {
+    this.root = new BSTNode(null, null);
+  }
+}
+
+module.exports = BinarySearchTree;
 
 /*
 |XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX

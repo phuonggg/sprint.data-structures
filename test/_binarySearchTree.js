@@ -32,13 +32,13 @@ describe("The Binary Search Tree", () => {
     fullBST.insert(13);
   });
 
-  xdescribe("The Binary Search Tree constructor", () => {
+  describe("The Binary Search Tree constructor", () => {
     it("should be an ES6 class", () => {
       expect(isClass(BinarySearchTree)).to.be.true;
     });
   });
 
-  xdescribe("The insert method", () => {
+  describe("The insert method", () => {
     it("should exist on the Tree prototype", () => {
       expect(BinarySearchTree.prototype.insert).to.exist;
       expect(typeof BinarySearchTree.prototype.insert).to.equal("function");
@@ -79,7 +79,7 @@ describe("The Binary Search Tree", () => {
     });
   });
 
-  xdescribe("The contains method", () => {
+  describe("The contains method", () => {
     it("should exist on the Tree prototype", () => {
       expect(BinarySearchTree.prototype.contains).to.exist;
       expect(typeof BinarySearchTree.prototype.contains).to.equal("function");
@@ -102,7 +102,7 @@ describe("The Binary Search Tree", () => {
     });
   });
 
-  xdescribe("The traverseDepthFirstInOrder method", () => {
+  describe("The traverseDepthFirstInOrder method", () => {
     it("should exist on the Tree prototype", () => {
       expect(BinarySearchTree.prototype.traverseDepthFirstInOrder).to.exist;
     });
