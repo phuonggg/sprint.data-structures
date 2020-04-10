@@ -48,7 +48,7 @@ describe.only("The Binary Search Tree", () => {
     it("should insert the given value", () => {
       tree.insert(2);
       expect(tree.value).to.equal(1);
-      expect(tree.right.value).to.equal(2);
+      expect(tree.rightChild.value).to.equal(2);
     });
 
     it("should return the entire tree for chaining purpose", () => {
@@ -64,10 +64,10 @@ describe.only("The Binary Search Tree", () => {
       tree.insert(2);
       tree.insert(0.4);
       tree.insert(7);
-      expect(tree.left.value).to.equal(0.4);
-      expect(tree.right.value).to.equal(4);
-      expect(tree.right.right.value).to.equal(7);
-      expect(tree.right.left.value).to.equal(2);
+      expect(tree.leftChild.value).to.equal(0.4);
+      expect(tree.rightChild.value).to.equal(4);
+      expect(tree.rightChild.rightChild.value).to.equal(7);
+      expect(tree.rightChild.left.value).to.equal(2);
     });
 
     it("should not allow duplicated value", () => {
@@ -75,8 +75,8 @@ describe.only("The Binary Search Tree", () => {
       tree.insert(101);
 
       expect(tree.value).to.equal(101);
-      expect(tree.left).to.not.exist;
-      expect(tree.right).to.not.exist;
+      expect(tree.leftChild).to.not.exist;
+      expect(tree.rightChild).to.not.exist;
     });
   });
 

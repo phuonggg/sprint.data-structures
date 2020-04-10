@@ -3,11 +3,9 @@ class BinarySearchTree {
     this.value = value;
     this.leftChild = null;
     this.rightChild = null;
-    // this.children = [];
   }
 
   /*
-
   base case:
   if tree already contains value, do nothing
 
@@ -18,48 +16,58 @@ class BinarySearchTree {
   recursion:
   compare to value -> if less, go left / if more or equal, go right
   */
+
   insert(value) {
     const newChild = new BinarySearchTree(value);
 
     const insertValue = (node) => {
       // console.log("node:", node);
+
+      // if node does not have a child
       if (!node.leftChild && !node.rightChild) {
         if (node.value < value) {
           node.leftChild = newChild;
-        } else node.rightChild = newChild;
+          return this;
+        } else {
+          node.rightChild = newChild;
+          return this;
+        }
       }
 
-      if (node.value < value) {
+      // when node has a child
+      if (node.value < value && node.leftChild) {
         insertValue(node.leftChild);
+      } else if (node.value >= value && node.rightChild) {
+        insertValue(node.rightChild);
       }
-      insertValue(node.rightChild);
     };
 
+    console.log(this);
     insertValue(this);
 
     return this;
   }
 
-  contain(value) {
-    let result = false;
-    const searchInChildren = function(element) {
-      //base case
-      if (element.value === value) {
-        result = true;
-        return result;
-      } else if (element.leftChild) {
-        element.leftChild.forEach((item) => {
-          searchInChildren(item);
-        });
-      } else if (element.rightChild) {
-        element.rightChild.forEach((item) => {
-          searchInChildren(item);
-        });
-      }
-    };
-    searchInChildren(this);
-    return result;
-  }
+  // contain(value) {
+  //   let result = false;
+  //   const searchInChildren = function(element) {
+  //     //base case
+  //     if (element.value === value) {
+  //       result = true;
+  //       return result;
+  //     } else if (element.leftChild) {
+  //       element.leftChild.forEach((item) => {
+  //         searchInChildren(item);
+  //       });
+  //     } else if (element.rightChild) {
+  //       element.rightChild.forEach((item) => {
+  //         searchInChildren(item);
+  //       });
+  //     }
+  //   };
+  //   searchInChildren(this);
+  //   return result;
+  // }
   /*
 1. is current node value the target? 
 2. if no, check if there is a left child
