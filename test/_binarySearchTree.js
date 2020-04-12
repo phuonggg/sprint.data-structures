@@ -9,7 +9,7 @@ let tree;
 let anotherTree;
 let fullBST;
 
-describe.only("The Binary Search Tree", () => {
+describe("The Binary Search Tree", () => {
   beforeEach(() => {
     tree = new BinarySearchTree(1);
 
