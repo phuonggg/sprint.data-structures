@@ -76,4 +76,4 @@ requirements for ALL data structures in this exercise.
 |X                               X
 |XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 */
-module.exports = { Tree }; //needed to export
+module.exports = Tree; //needed to export
